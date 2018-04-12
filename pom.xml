@@ -5,8 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>drools</groupId>
-    <artifactId>drools.demo</artifactId>
+    <artifactId>drools-template</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <name>Drools Template</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -29,10 +31,13 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <app.name>drools-template</app.name>
+        <start-class>demo.Application</start-class>
     </properties>
 
 
     <build>
+        <finalName>drools-template</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
