@@ -8,26 +8,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
-
 @RestController
 public class LoanController {
 
     @Autowired
     private KieContainer kieContainer;
 
-    @RequestMapping("/{id}")
-    public Loan index(@PathVariable(name = "id") String id) {
+    @RequestMapping("/{amount}")
+    public Loan index(@PathVariable(name = "amount") String amount) {
 
-        Loan loan = new Loan();
-        loan.setClientId(id);
+        Loan loan = new Loan(Integer.valueOf(amount));
 
         KieSession kieSession = kieContainer.newKieSession("rulesSession");
         kieSession.insert(loan);
         kieSession.fireAllRules();
         kieSession.dispose();
         return loan;
-
     }
-
 }

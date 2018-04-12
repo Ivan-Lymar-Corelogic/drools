@@ -2,9 +2,12 @@ package demo.model;
 
 public class Loan {
 
-    private String clientId;
-    private String amount;
+    private Integer amount;
     private Boolean allowed;
+
+    public Loan(Integer amount) {
+        this.amount = amount;
+    }
 
     public Boolean getAllowed() {
         return allowed;
@@ -14,19 +17,11 @@ public class Loan {
         this.allowed = allowed;
     }
 
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 }
