@@ -1,19 +1,24 @@
 package demo.model;
 
-public class Loan {
+import java.io.Serializable;
+
+public class Loan implements Serializable{
 
     private Integer amount;
-    private Boolean allowed;
+    private boolean allowed;
+    private Integer id;
+    private Integer allowedAmount;
 
-    public Loan(Integer amount) {
+    public Loan(Integer amount, Integer id) {
         this.amount = amount;
+        this.id = id;
     }
 
-    public Boolean getAllowed() {
+    public boolean getAllowed() {
         return allowed;
     }
 
-    public void setAllowed(Boolean allowed) {
+    public void setAllowed(boolean allowed) {
         this.allowed = allowed;
     }
 
@@ -23,5 +28,21 @@ public class Loan {
 
     public void setAmount(Integer amount) {
         this.amount = amount;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getAllowedAmount() {
+        return allowedAmount;
+    }
+
+    public void setAllowedAmount(Integer allowedAmount) {
+        this.allowedAmount = allowedAmount;
     }
 }

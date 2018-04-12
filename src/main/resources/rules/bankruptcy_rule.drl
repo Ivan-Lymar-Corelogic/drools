@@ -4,14 +4,7 @@ import demo.model.Loan
 
 rule "Allowed amount"
 	when
-		loan: Loan(amount<40000)
+		loan: Loan(amount<allowedAmount)
 	then
 		loan.setAllowed(true);
 	end
-
-rule "Restricted amount"
-    when
-        loan: Loan(amount>=40000)
-    then
-        loan.setAllowed(false);
-    end
