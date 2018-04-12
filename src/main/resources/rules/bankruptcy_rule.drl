@@ -1,0 +1,18 @@
+package rules
+
+import demo.model.Loan
+
+rule "Allowed amount"
+	when
+		loan: Loan(clientId=="12345")
+	then
+		loan.setAllowed(true);
+	end
+
+rule "Restricted amount"
+	when
+    	loan: Loan(clientId!="12345")
+    then
+    	loan.setAllowed(false);
+    end
+
