@@ -1,0 +1,9 @@
+---
+ applications:
+ - name: drools-template
+   memory: 1G
+   instances: 1
+   path: ../target/drools-template.jar
+   buildpack: java_buildpack_offline-3_8_1
+   timeout: 180
+
